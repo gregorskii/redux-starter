@@ -9,7 +9,7 @@ const createStoreWithMiddleware = (reducers) => {
     reducers,
     composeWithDevTools(applyMiddleware(...[promise]))
   );
-}
+};
 
 const store = createStoreWithMiddleware(Reducers);
 

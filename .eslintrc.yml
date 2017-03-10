@@ -14,8 +14,9 @@ rules:
   arrow-body-style: off
   no-console: off
   no-alert: off
-  import/no-unresolved: 0
-  import/imports-first: 0
-  import/newline-after-import: 0
-  import/no-extraneous-dependencies: 0
-  space-before-function-paren: 0
+  import/extensions: off
+  import/no-unresolved: off
+  import/imports-first: off
+  import/newline-after-import: off
+  import/no-extraneous-dependencies: off
+  space-before-function-paren: off
