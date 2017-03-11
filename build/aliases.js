@@ -20,7 +20,8 @@ const aliases = {
   projectSrcRoot: paths.src,
   nodeRoot: path.join(paths.projectRoot, 'node_modules'),
   resolveAlias: Object.assign({
-    src: paths.src
+    src: paths.src,
+    test: paths.test
   }, projectScriptDirs)
 };
 
