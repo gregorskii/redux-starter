@@ -1,11 +1,15 @@
 /* eslint-disable func-names, prefer-arrow-callback */
 
-const assert = require('assert');
+import Welcome from 'components/welcome';
+import {
+  renderComponent,
+  expect
+} from 'test/unit/spec/helpers';
 
 describe('Welcome', function() {
-  describe('test', function() {
-    it('should succed', function() {
-      assert.equal(true, true);
-    });
+  it('should render text', function() {
+    const component = renderComponent(Welcome);
+
+    expect(component).to.contain('Welcome!');
   });
 });
