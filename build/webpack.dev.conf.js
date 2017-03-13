@@ -5,7 +5,6 @@ const eslintFriendlyFormatter = require('eslint-friendly-formatter');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = require('../config');
-const aliases = require('./aliases');
 const paths = require('./paths');
 const baseWebpackConfig = require('./webpack.base.conf');
 
@@ -31,10 +30,10 @@ module.exports = merge(baseWebpackConfig, {
   module: {
     rules: [
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.js(x)?$/,
         exclude: /node_modules/,
-        loader: "eslint-loader",
+        loader: 'eslint-loader',
         options: {
           formatter: eslintFriendlyFormatter,
           configFile: './.eslintrc.yml'

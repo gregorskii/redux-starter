@@ -1,7 +1,6 @@
-const path = require('path');
 const config = require('../config');
 
-exports.assetsPath = function (_path) {
+exports.assetsPath = (_path) => {
   if (process.env.NODE_ENV === 'dev') {
     return _path;
   }
@@ -18,9 +17,9 @@ exports.isVendor = (module) => {
   const vendor = vendorTest(module);
   if (process.env.DEBUG === 'true') {
     if (vendor) {
-      util.log(util.colors.green(`Vendoring: ${module.resource}`));
+      console.log(`Vendoring: ${module.resource}`);
     } else {
-      util.log(module.resource);
+      console.log(module.resource);
     }
   }
   return vendor;

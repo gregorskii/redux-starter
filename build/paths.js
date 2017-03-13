@@ -1,6 +1,6 @@
 const path = require('path');
 
-const projectBase = path.resolve(__dirname, '..')
+const projectBase = path.resolve(__dirname, '..');
 const projectRoot = projectBase;
 const build = path.join(projectRoot, 'build');
 const src = path.resolve(projectRoot, 'src');

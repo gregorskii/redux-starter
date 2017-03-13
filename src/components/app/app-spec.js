@@ -1,3 +1,3 @@
-//import { renderComponent, expect } from 'test/unit/spec/helpers';
+import { renderComponent, expect } from 'test/unit/spec/helpers';
 
-//console.log(renderComponent);
+console.log(renderComponent);

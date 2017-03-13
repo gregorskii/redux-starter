@@ -1,6 +1,4 @@
 const aliases = require('./aliases');
-const paths = require('./paths');
-const eslintFriendlyFormatter = require('eslint-friendly-formatter');
 
 module.exports = {
   resolve: {

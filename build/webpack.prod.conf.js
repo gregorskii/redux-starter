@@ -5,9 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StatsPlugin = require('stats-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 
 const baseWebpackConfig = require('./webpack.base.conf');
-const path = require('path');
 const config = require('../config');
 const utils = require('./utils');
 const conf = config.prod;
@@ -69,10 +69,10 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     new FaviconsWebpackPlugin(config.favicon),
     new CopyWebpackPlugin([
-      { from:'src/static' }
+      { from: 'src/static' }
     ], {
       ignore: [
-        config.favicon.split('/')[(config.favicon.split('/')).length -1]
+        config.favicon.split('/')[(config.favicon.split('/')).length - 1]
       ]
     })
   ]
@@ -87,7 +87,6 @@ if (process.env.DEBUG === 'true') {
 }
 
 if (conf.gzip) {
-  const CompressionWebpackPlugin = require('compression-webpack-plugin');
   webpackConfig.plugins.push(
     new CompressionWebpackPlugin({
       asset: '[path].gz[query]',
