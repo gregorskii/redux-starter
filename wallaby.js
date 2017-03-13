@@ -2,9 +2,12 @@ process.env.NODE_ENV = 'test';
 
 const path = require('path');
 
-module.exports = function (wallaby) {
-  process.env.NODE_PATH += path.delimiter + path.join(wallaby.projectCacheDir, 'src') +
-    path.delimiter + path.join(wallaby.projectCacheDir);
+module.exports = (wallaby) => {
+  process.env.NODE_PATH += path.delimiter +
+    path.join(wallaby.projectCacheDir, 'src') +
+    path.delimiter +
+    path.join(wallaby.projectCacheDir
+  );
 
   return {
     debug: true,
@@ -26,8 +29,9 @@ module.exports = function (wallaby) {
     compilers: {
       '**/*.js?(x)': wallaby.compilers.babel()
     },
-    setup: function () {
-      require.extensions['.css'] = require.extensions['.sass'] = () => {};
+    setup: () => {
+      require.extensions['.css'] = () => {};
+      require.extensions['.sass'] = () => {};
     }
   };
 };
