@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import jsdom from 'jsdom';
 import chai, { expect } from 'chai';
+import assert from 'assert';
 import chaiJquery from 'chai-jquery';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -16,21 +17,22 @@ const $ = _$(window);
 
 chaiJquery(chai, chai.util, $);
 
-function renderComponent(ComponentClass, props = {}, state = {}) {
-  const componentInstance =  TestUtils.renderIntoDocument(
+const renderComponent = (ComponentClass, props = {}, state = {}) => {
+  const componentInstance = TestUtils.renderIntoDocument(
     <Provider store={createStore(reducers, state)}>
       <ComponentClass {...props} />
     </Provider>
   );
 
+  // eslint-disable-next-line react/no-find-dom-node
   return $(ReactDOM.findDOMNode(componentInstance));
-}
+};
 
-$.fn.simulate = function(eventName, value) {
+$.fn.simulate = (eventName, value) => {
   if (value) {
     this.val(value);
   }
   TestUtils.Simulate[eventName](this[0]);
 };
 
-export { renderComponent, expect };
+export { renderComponent, expect, assert };
