@@ -16,9 +16,6 @@ module.exports = {
     extensions: ['.js', '.jsx', '.css', '.scss', '.sass'],
     alias: aliases.resolveAlias
   },
-  externals: {
-    'react': 'React'
-  },
   module: {
     rules: [
       {
