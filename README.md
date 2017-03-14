@@ -4,7 +4,7 @@ A Redux starter with with Mocha, WallabyJs, and Karma for testing, React Storybo
 
 ## Note
 
-Storybook is broken under webpack 2 per [#637](https://github.com/storybooks/react-storybook/pull/637)
+Storybook is broken under webpack 2 per [#637](https://github.com/storybooks/react-storybook/pull/637) this project has a custom Webpack 1 config for storybook.
 
 ## Prerequisites
 
