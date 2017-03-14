@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-const Welcome = () => {
+const Welcome = (props) => {
   return (
-    <div>Welcome!</div>
+    <div>{props.welcomeText}</div>
   );
+};
+
+Welcome.propTypes = {
+  welcomeText: PropTypes.string
+};
+
+Welcome.defaultProps = {
+  welcomeText: 'Welcome!'
 };
 
 export default Welcome;
