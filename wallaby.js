@@ -32,6 +32,8 @@ module.exports = (wallaby) => {
     setup: () => {
       require.extensions['.css'] = () => {};
       require.extensions['.sass'] = () => {};
+      // eslint-disable-next-line global-require
+      require('./test/unit/spec/helpers');
     }
   };
 };

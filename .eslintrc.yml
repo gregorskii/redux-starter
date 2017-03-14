@@ -9,6 +9,8 @@ parserOptions:
   sourceType: module
 extends:
   - 'airbnb'
+globals:
+  expect: true
 rules:
   comma-dangle: off
   arrow-body-style: off
@@ -20,4 +22,3 @@ rules:
   import/newline-after-import: off
   import/no-extraneous-dependencies: off
   space-before-function-paren: off
-  class-methods-use-this: 1
