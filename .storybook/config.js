@@ -1,4 +1,5 @@
 import { configure } from '@kadira/storybook';
+import 'test/unit/spec/helpers/storybook';
 
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);

@@ -6,6 +6,13 @@ module.exports = {
     fallback: [aliases.nodeRoot],
     alias: aliases.resolveAlias
   },
+  externals: {
+    'jsdom': 'window',
+    'cheerio': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': 'window',
+    'react/addons': true
+  },
   module: {
     loaders: [
       {

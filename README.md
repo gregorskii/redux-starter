@@ -2,9 +2,11 @@
 
 A Redux starter with with Mocha, WallabyJs, and Karma for testing, React Storybook for visual design, and Flow for static type checking.
 
-## Note
+## Notes
 
-Storybook is broken under webpack 2 per [#637](https://github.com/storybooks/react-storybook/pull/637) this project has a custom Webpack 1 config for storybook.
+Storybook is broken under webpack 2 per [#637](https://github.com/storybooks/react-storybook/pull/637)
+
+To use this project with Jasmine see [the readme and config files](https://github.com/gregorskii/redux-starter/tree/master/test/unit/spec/jasmine). The project is configured to use [storybook-addon-specifications](https://github.com/mthuret/storybook-addon-specifications) with Mocha only.
 
 ## Prerequisites
 
