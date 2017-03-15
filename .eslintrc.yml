@@ -1,9 +1,12 @@
 env:
   browser: true
   mocha: true
+  node: true
+  es6: true
 plugins:
   - mocha
   - react
+  - compat
 parser: babel-eslint
 parserOptions:
   sourceType: module
@@ -22,3 +25,4 @@ rules:
   import/newline-after-import: off
   import/no-extraneous-dependencies: off
   space-before-function-paren: off
+  compat/compat: 2

@@ -11,8 +11,12 @@
     "lint": "eslint --ext .js,.jsx src test/unit/spec",
     "build": "rm -rf ./dist && export NODE_ENV=prod && webpack --config ./build/webpack.prod.conf.js -p"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "gregorskii",
+  "license": "MIT",
+  "browserslist": [
+    "last 1 versions",
+    "not ie <= 8"
+  ],
   "devDependencies": {
     "@kadira/storybook": "v2.35.3",
     "@kadira/storybook-addon-knobs": "^1.7.1",
@@ -33,6 +37,7 @@
     "eslint-config-airbnb": "^14.1.0",
     "eslint-friendly-formatter": "^2.0.6",
     "eslint-loader": "^1.5.0",
+    "eslint-plugin-compat": "^1.0.2",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-mocha": "^4.8.0",
