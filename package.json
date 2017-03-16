@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "storybook": "NODE_ENV=storybook start-storybook -p 9001",
-    "test": "NODE_ENV=test mocha ./src/**/*-spec.jsx --compilers js:babel-core/register --require=./test/unit/spec/helpers/index.js --recursive",
+    "test": "NODE_ENV=test mocha ./src/**/*-spec.* --compilers js:babel-core/register --require=./test/unit/spec/helpers/index.js --recursive",
     "lint": "eslint --ext .js,.jsx src test/unit/spec",
     "build": "rm -rf ./dist && export NODE_ENV=prod && webpack --config ./build/webpack.prod.conf.js -p"
   },
