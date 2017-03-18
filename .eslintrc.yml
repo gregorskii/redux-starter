@@ -16,15 +16,17 @@ globals:
   expect: true
   assert: true
 rules:
-  comma-dangle: off
-  arrow-body-style: off
-  no-console: off
-  no-alert: off
-  import/extensions: off
-  import/no-unresolved: off
-  import/imports-first: off
-  import/newline-after-import: off
-  import/no-extraneous-dependencies: off
-  space-before-function-paren: off
   compat/compat: 2
+  comma-dangle: 0
+  arrow-body-style: off
+  no-console: 1
+  no-alert: 1
+  class-methods-use-this: 1
+  space-before-function-paren: 0
+  semi: 1
+  import/extensions: 0
+  import/no-unresolved: 0
+  import/imports-first: 0
+  import/newline-after-import: 1
+  import/no-extraneous-dependencies: 0
   react/prefer-stateless-function: 1

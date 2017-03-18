@@ -7,11 +7,15 @@ import App from 'components/app';
 
 // Use describe to group similar tests
 describe('App', function() {
-  // Use 'it' to test a single attribute of a target
-  it('should be defined', function() {
-    // Use expect to make an assertion about a target
-    const wrapper = shallow(<App />);
+  describe('rendering', function() {
+    beforeEach(function() {
+      this.wrapper = shallow(<App />);
+    });
 
-    expect(wrapper).be.present();
+    // Use 'it' to test a single attribute of a target
+    it('should be defined', function() {
+      // Use expect to make an assertion about a target
+      expect(this.wrapper).be.present();
+    });
   });
 });
