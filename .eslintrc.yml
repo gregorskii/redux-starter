@@ -27,3 +27,4 @@ rules:
   import/no-extraneous-dependencies: off
   space-before-function-paren: off
   compat/compat: 2
+  react/prefer-stateless-function: 1
