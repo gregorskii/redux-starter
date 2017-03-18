@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 const eslintFriendlyFormatter = require('eslint-friendly-formatter');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const config = require('../config');
 const paths = require('./paths');
@@ -55,6 +56,22 @@ module.exports = merge(baseWebpackConfig, {
       filename: conf.indexOutputPath,
       template: conf.indexTemplatePath,
       inject: true
+    }),
+    ,
+    new FaviconsWebpackPlugin({
+      logo: config.favicon,
+      icons: {
+        android: false,
+        appleIcon: false,
+        appleStartup: false,
+        coast: false,
+        favicons: true,
+        firefox: false,
+        opengraph: false,
+        twitter: false,
+        yandex: false,
+        windows: false
+      }
     })
   ]
 });
