@@ -21,6 +21,7 @@ rules:
   arrow-body-style: off
   no-console: 1
   no-alert: 1
+  spaced-comment: 1
   class-methods-use-this: 1
   space-before-function-paren: 0
   semi: 1
