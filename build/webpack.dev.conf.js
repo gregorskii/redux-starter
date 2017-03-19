@@ -57,7 +57,6 @@ module.exports = merge(baseWebpackConfig, {
       template: conf.indexTemplatePath,
       inject: true
     }),
-    ,
     new FaviconsWebpackPlugin({
       logo: config.favicon,
       icons: {

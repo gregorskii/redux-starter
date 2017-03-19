@@ -1,15 +1,12 @@
 const express = require('express');
 const webpack = require('webpack');
 const opn = require('opn');
+const proxyMiddleware = require('http-proxy-middleware');
 
 const config = require('../config');
-const proxyMiddleware = require('http-proxy-middleware');
-const conf = config.dev;
+const webpackConfig = require('./webpack.dev.conf');
 
-const webpackConfig = process.env.NODE_ENV === 'test'
-  ? require('./webpack.base.conf')
-  : require('./webpack.dev.conf')
-;
+const conf = config.dev;
 
 // Define HTTP proxies to your custom API backend
 // https://github.com/chimurai/http-proxy-middleware
