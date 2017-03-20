@@ -3,7 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import createStorybookListener from 'storybook-addon-redux-listener';
 import promise from 'redux-promise';
 
-import Reducers from './reducers';
+import Reducers from 'reducers';
 
 const middlewares = [promise];
 

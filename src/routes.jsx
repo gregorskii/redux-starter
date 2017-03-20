@@ -6,8 +6,8 @@ import {
   browserHistory
 } from 'react-router';
 
-import App from './components/app';
-import Home from './pages/home';
+import App from 'components/app';
+import Home from 'pages/home';
 
 const AppRouter = () => {
   return (

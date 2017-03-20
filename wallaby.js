@@ -16,6 +16,7 @@ module.exports = (wallaby) => {
       'src/**/*.js?(x)',
       'src/**/*.scss',
       'src/**/*.css',
+      'src/**/*.json',
       'test/unit/spec/helpers/**/*.js?(x)',
       '!src/**/*-spec.js?(x)',
       '!src/**/*-storybook.js?(x)'
