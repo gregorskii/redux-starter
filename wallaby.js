@@ -15,6 +15,7 @@ module.exports = (wallaby) => {
     files: [
       'src/**/*.js?(x)',
       'src/**/*.scss',
+      'src/**/*.sass',
       'src/**/*.css',
       'src/**/*.json',
       'test/unit/spec/helpers/**/*.js?(x)',
@@ -33,6 +34,7 @@ module.exports = (wallaby) => {
     setup: () => {
       require.extensions['.css'] = () => {};
       require.extensions['.sass'] = () => {};
+      require.extensions['.scss'] = () => {};
       // eslint-disable-next-line global-require
       require('./test/unit/spec/helpers');
     }
