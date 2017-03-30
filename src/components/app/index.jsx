@@ -1,6 +1,6 @@
 import React from 'react';
 
-import 'src/styles/critical.scss';
+import 'src/critical-styles/styles.scss';
 
 const App = (props) => {
   return (
