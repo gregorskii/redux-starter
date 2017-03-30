@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react';
 
+import styles from './welcome.scss';
+
 const Welcome = (props) => {
   return (
-    <div>{props.welcomeText}</div>
+    <div className={styles.welcome}>{props.welcomeText}</div>
   );
 };
 
