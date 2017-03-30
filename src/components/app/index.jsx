@@ -1,6 +1,6 @@
 import React from 'react';
 
-import 'styles/base.scss';
+import 'styles/base.global.scss';
 
 const App = (props) => {
   return (
