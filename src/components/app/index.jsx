@@ -1,5 +1,7 @@
 import React from 'react';
 
+import 'src/styles/critical.scss';
+
 const App = (props) => {
   return (
     <div>
