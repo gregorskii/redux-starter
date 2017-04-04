@@ -10,7 +10,7 @@ const baseConf = {
 };
 
 // The path that the browser will load chunks from
-const publicPath = '';
+const publicPath = '/';
 
 module.exports = {
   favicon: path.join(paths.src, 'static', 'favicon.png'),

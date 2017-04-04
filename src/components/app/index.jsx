@@ -2,13 +2,7 @@ import React from 'react';
 
 import 'styles/base.global.scss';
 
-const App = (props) => {
-  return (
-    <div>
-      {props.children}
-    </div>
-  );
-};
+const App = ({ children }) => (<div>{children}</div>);
 
 App.propTypes = {
   children: React.PropTypes.node
