@@ -2,6 +2,8 @@
 
 A Redux starter with with Mocha, WallabyJs, and Karma for testing, React Storybook for visual design, and Flow for static type checking.
 
+Includes Bootstrap v4 Alpha, but can be removed from the `src/index.html`.
+
 ## Notes
 
 Storybook is broken under webpack 2 per [#637](https://github.com/storybooks/react-storybook/pull/637)
