@@ -1,5 +1,5 @@
 import { configure } from '@kadira/storybook';
-import 'test/unit/spec/helpers/storybook';
+import 'styles/base.global.scss';
 
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
