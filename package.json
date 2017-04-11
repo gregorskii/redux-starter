@@ -9,7 +9,7 @@
     "storybook": "NODE_ENV=storybook start-storybook -p 9001",
     "test": "NODE_ENV=test mocha './src/**/*-spec.*' --compilers js:babel-core/register --require ignore-styles --require=./test/unit/spec/helpers/index.js --recursive",
     "lint": "eslint --ext .js,.jsx src test/unit/spec",
-    "build": "rm -rf ./dist && export NODE_ENV=prod && webpack --config ./build/webpack.prod.conf.js -p"
+    "build": "export NODE_ENV=prod && webpack --config ./build/webpack.prod.conf.js -p"
   },
   "author": "gregorskii",
   "license": "MIT",
@@ -29,6 +29,7 @@
     "babel-preset-stage-1": "^6.22.0",
     "chai": "^3.5.0",
     "chai-enzyme": "^0.6.1",
+    "clean-webpack-plugin": "^0.1.16",
     "compression-webpack-plugin": "^0.3.2",
     "connect-history-api-fallback": "^1.3.0",
     "copy-webpack-plugin": "^4.0.1",
