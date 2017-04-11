@@ -1,10 +1,15 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import styles from './welcome.scss';
 
 const Welcome = (props) => {
   return (
-    <div className={styles.welcome}>{props.welcomeText}</div>
+    <section>
+      <div className={styles.welcome}>{props.welcomeText}</div>
+      <Link to="/test">Test</Link>
+    </section>
   );
 };
 

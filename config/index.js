@@ -20,7 +20,7 @@ module.exports = {
     // Where to put bundle assets
     outputPath: paths.dist,
     // Port for dev server
-    port: 8080,
+    port: 4000,
     // Where to find the index.html template
     indexTemplatePath: path.join(paths.src, 'index.html'),
     // Where to put it

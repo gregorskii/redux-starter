@@ -1,21 +1,20 @@
 import React from 'react';
 import {
   Route,
-  IndexRoute,
-  Router,
-  browserHistory
-} from 'react-router';
+  BrowserRouter
+} from 'react-router-dom';
 
 import App from 'components/app';
 import Home from 'pages/home';
 
 const AppRouter = () => {
   return (
-    <Router history={browserHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Home} />
-      </Route>
-    </Router>
+    <BrowserRouter>
+      <App>
+        <Route exact path="/" component={Home} />
+        <Route path="/test" render={() => (<div>Test</div>)} />
+      </App>
+    </BrowserRouter>
   );
 };
 
