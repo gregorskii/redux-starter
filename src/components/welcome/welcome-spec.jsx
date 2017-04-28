@@ -15,7 +15,7 @@ describe('Welcome', function() {
     // Use 'it' to test a single attribute of a target
     it('should show the correct text', function() {
       // Use expect to make an assertion about a target
-      expect(this.wrapper.find('div')).to.have.text('Welcome!');
+      expect(this.wrapper.find('p').first()).to.have.text('Welcome!');
     });
   });
 });

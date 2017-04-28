@@ -21,7 +21,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.global\.scss$/,
+        test: /(\.global|_bootstrap)\.scss$/,
         loader: [
           'style-loader',
           `css-loader?${noModuleQuery}`,
@@ -29,12 +29,20 @@ module.exports = {
         ].join('!')
       },
       {
-        test: /^((?!(.global)).)*\.scss$/,
+        test: /^((?!(\.global|_bootstrap)).)*\.scss$/,
         loader: [
           'style-loader',
           `css-loader?${moduleQuery}`,
           'sass-loader'
         ].join('!')
+      },
+      {
+        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=10000'
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+        loader: 'file-loader',
       }
     ]
   }
