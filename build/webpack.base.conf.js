@@ -28,7 +28,7 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.global\.scss$/,
+        test: /(\.global|_bootstrap)\.scss$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -41,7 +41,7 @@ module.exports = {
         })
       },
       {
-        test: /^((?!(.global)).)*\.scss$/,
+        test: /^((?!(\.global|_bootstrap)).)*\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -59,6 +59,21 @@ module.exports = {
       {
         test: /\.json$/,
         use: 'json-loader'
+      },
+      {
+        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: '10000'
+            }
+          }
+        ],
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+        use: 'file-loader',
       }
     ]
   },
