@@ -1,0 +1,5 @@
+**Welcome example:**
+
+```
+  <Welcome welcomeText="🍕" />
+```

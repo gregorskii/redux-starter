@@ -7,3 +7,5 @@ test/unit/results
 *.iml
 /.idea
 .DS_Store
+styleguide/build
+styleguide/index.html

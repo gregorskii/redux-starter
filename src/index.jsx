@@ -9,5 +9,5 @@ ReactDOM.render(
   <Provider store={store}>
     <AppRouter />
   </Provider>,
-  document.querySelector('.container')
+  document.querySelector('.root')
 );
