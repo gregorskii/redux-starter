@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
+import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
 import store from 'src/store';
 

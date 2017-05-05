@@ -19,24 +19,28 @@ module.exports = {
       },
       {
         test: /(\.global|_bootstrap)\.scss$/,
-        use: [{
-          loader: 'css-loader',
-          options: { modules: false }
-        },
-        { loader: 'postcss-loader' },
-        { loader: 'sass-loader' }]
+        use: [
+          {
+            loader: 'css-loader',
+            options: { modules: false }
+          },
+          { loader: 'postcss-loader' },
+          { loader: 'sass-loader' }
+        ]
       },
       {
         test: /^((?!(\.global|_bootstrap)).)*\.scss$/,
-        use: [{
-          loader: 'css-loader',
-          options: {
-            modules: true,
-            localIdentName: '[local]--[hash:base64:5]'
-          }
-        },
-        { loader: 'postcss-loader' },
-        { loader: 'sass-loader' }]
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[local]--[hash:base64:5]'
+            }
+          },
+          { loader: 'postcss-loader' },
+          { loader: 'sass-loader' }
+        ]
       },
       {
         test: /\.json$/,

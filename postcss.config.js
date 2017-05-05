@@ -1,6 +1,7 @@
 const cssnext = require('postcss-cssnext');
 
 const cssNextOpts = {
+  browsers: ['last 2 versions', '> 5%'],
   features: {
     customProperties: {
       variables: {
@@ -12,6 +13,7 @@ const cssNextOpts = {
 };
 
 module.exports = {
+  map: process.env.NODE_ENV === 'dev' ? 'inline' : false,
   plugins: [
     cssnext(cssNextOpts)
   ]

@@ -71,11 +71,11 @@ module.exports = {
               limit: '10000'
             }
           }
-        ],
+        ]
       },
       {
         test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
-        use: 'file-loader',
+        use: 'file-loader'
       }
     ]
   },

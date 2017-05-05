@@ -8,17 +8,15 @@ import styles from './welcome.scss';
 
 const Welcome = (props) => {
   return (
-    <section>
-      <Jumbotron bsClass="jumbotron" className={styles.welcome}>
-        <h1>Redux Starter</h1>
-        <p>{props.welcomeText}</p>
-        <p>
-          <LinkContainer to="/test">
-            <Button bsStyle="primary">Test</Button>
-          </LinkContainer>
-        </p>
-      </Jumbotron>
-    </section>
+    <Jumbotron bsClass="jumbotron" className={styles.welcome}>
+      <h1>Redux Starter</h1>
+      <p>{props.welcomeText}</p>
+      <p>
+        <LinkContainer to="/test">
+          <Button bsStyle="primary">Test</Button>
+        </LinkContainer>
+      </p>
+    </Jumbotron>
   );
 };
 

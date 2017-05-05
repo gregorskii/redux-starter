@@ -25,6 +25,7 @@ module.exports = {
         loader: [
           'style-loader',
           `css-loader?${noModuleQuery}`,
+          'postcss-loader',
           'sass-loader'
         ].join('!')
       },
@@ -33,6 +34,7 @@ module.exports = {
         loader: [
           'style-loader',
           `css-loader?${moduleQuery}`,
+          'postcss-loader',
           'sass-loader'
         ].join('!')
       },
@@ -42,7 +44,7 @@ module.exports = {
       },
       {
         test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
-        loader: 'file-loader',
+        loader: 'file-loader'
       }
     ]
   }
