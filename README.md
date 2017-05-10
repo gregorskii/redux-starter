@@ -7,8 +7,8 @@ Includes Bootstrap v4 Alpha, but can be removed from the `src/index.html`.
 ## Notes
 
 Storybook is broken under webpack 2 per [#637](https://github.com/storybooks/react-storybook/pull/637)
-
-To use this project with Jasmine see [the readme and config files](https://github.com/gregorskii/redux-starter/tree/master/test/unit/spec/jasmine). The project is configured to use [storybook-addon-specifications](https://github.com/mthuret/storybook-addon-specifications) with Mocha only.
+Waiting on wallaby-webpack to have v2 support to fix unit tests -> https://github.com/jeffling/wallaby-webpack/issues/24
+Waiting on mocha-webpack to support compilers -> https://github.com/zinserjan/mocha-webpack/issues/132
 
 ## Prerequisites
 
@@ -95,10 +95,16 @@ To start React Storybook run:
 npm run storybook
 ```
 
-To run unit tests in `karma` run:
+To start React Styleguidist run:
 
 ```
-npm run karma
+npm run styleguide
+```
+
+To run unit tests on the CLI run:
+
+```
+npm run test
 ```
 
 To lint the code outside of webpack using `eslint` run:
@@ -111,4 +117,10 @@ To develop with Webpack Dev Server run:
 
 ```
 npm run dev
+```
+
+To build for production run:
+
+```
+npm run build
 ```
