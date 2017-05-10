@@ -4,11 +4,13 @@ const webpack = require('webpack');
 const eslintFriendlyFormatter = require('eslint-friendly-formatter');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const config = require('../config');
 const paths = require('./paths');
 const baseWebpackConfig = require('./webpack.base.conf');
 
+const stylelintConfig = path.join(process.cwd(), '.stylelintrc.yml');
 const conf = config.dev;
 
 // add hot-reload related code to entry chunks
@@ -50,6 +52,9 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': conf.env
+    }),
+    new StyleLintPlugin({
+      configFile: stylelintConfig
     }),
     new HtmlWebpackPlugin({
       filename: conf.indexOutputPath,

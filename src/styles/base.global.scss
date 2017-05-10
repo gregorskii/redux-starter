@@ -1,20 +1,3 @@
 /* Put custom global app styles here. (not component styles) */
 
-@import "~styles/_bootstrap.global.scss";
-
-/*
- * Adjust custom media query values here
- * or in webpack.config.js
- *
- * E.g.
- * @custom-media --breakpoint-sm (min-width: 42em);
- *
- */
-:root {
-  /* Adjust custom property values (i.e. variables) here
-   * or in webpack.config.js
-   *
-   * E.g.
-   * --font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, sans-serif;
-   */
-}
+@import "~styles/bootstrap.global.scss";
