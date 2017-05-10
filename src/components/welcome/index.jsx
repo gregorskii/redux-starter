@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Jumbotron from 'react-bootstrap/lib/Jumbotron';
-import Button from 'react-bootstrap/lib/Button';
+import { Jumbotron, Button } from 'reactstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import styles from './welcome.scss';

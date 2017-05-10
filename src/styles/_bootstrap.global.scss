@@ -1,0 +1,55 @@
+/*!
+ * Custom Bootstrap SCSS
+ */
+
+// Core variables and mixins
+@import "~styles/_bootstrap/variables";
+@import "~styles/_bootstrap/mixins";
+@import "~styles/_bootstrap/custom";
+
+// Custom Variables/Mixins
+@import '~styles/_starter/_vars.global.scss';
+@import '~styles/_starter/_mixins.global.scss';
+
+// Reset and dependencies
+@import "~styles/_bootstrap/normalize";
+@import "~styles/_bootstrap/print";
+
+// Core CSS
+@import "~styles/_bootstrap/reboot";
+@import "~styles/_bootstrap/type";
+@import "~styles/_bootstrap/images";
+@import "~styles/_bootstrap/code";
+@import "~styles/_bootstrap/grid";
+@import "~styles/_bootstrap/tables";
+@import "~styles/_bootstrap/forms";
+@import "~styles/_bootstrap/buttons";
+
+// Components
+@import "~styles/_bootstrap/transitions";
+@import "~styles/_bootstrap/dropdown";
+@import "~styles/_bootstrap/button-group";
+@import "~styles/_bootstrap/input-group";
+@import "~styles/_bootstrap/custom-forms";
+@import "~styles/_bootstrap/nav";
+@import "~styles/_bootstrap/navbar";
+@import "~styles/_bootstrap/card";
+@import "~styles/_bootstrap/breadcrumb";
+@import "~styles/_bootstrap/pagination";
+@import "~styles/_bootstrap/badge";
+@import "~styles/_bootstrap/jumbotron";
+@import "~styles/_bootstrap/alert";
+@import "~styles/_bootstrap/progress";
+@import "~styles/_bootstrap/media";
+@import "~styles/_bootstrap/list-group";
+@import "~styles/_bootstrap/responsive-embed";
+@import "~styles/_bootstrap/close";
+
+// Components w/ JavaScript
+@import "~styles/_bootstrap/modal";
+@import "~styles/_bootstrap/tooltip";
+@import "~styles/_bootstrap/popover";
+@import "~styles/_bootstrap/carousel";
+
+// Utility classes
+@import "~styles/_bootstrap/utilities";

@@ -18,7 +18,8 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /(\.global|_bootstrap)\.scss$/,
+        test: /\.scss$/,
+        include: [/\.global/, /bootstrap/],
         use: [
           {
             loader: 'css-loader',
@@ -29,7 +30,8 @@ module.exports = {
         ]
       },
       {
-        test: /^((?!(\.global|_bootstrap)).)*\.scss$/,
+        test: /\.scss$/,
+        exclude: [/\.global/, /bootstrap/],
         use: [
           {
             loader: 'css-loader',

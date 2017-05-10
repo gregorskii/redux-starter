@@ -28,7 +28,8 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /(\.global|_bootstrap)\.scss$/,
+        test: /\.scss$/,
+        include: [/\.global/, /bootstrap/],
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -42,7 +43,8 @@ module.exports = {
         })
       },
       {
-        test: /^((?!(\.global|_bootstrap)).)*\.scss$/,
+        test: /\.scss$/,
+        exclude: [/\.global/, /bootstrap/, /node_modules/],
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -50,6 +52,7 @@ module.exports = {
               loader: 'css-loader',
               options: {
                 modules: true,
+                importLoaders: 1,
                 localIdentName: '[local]--[hash:base64:5]'
               }
             },

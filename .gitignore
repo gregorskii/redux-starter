@@ -9,3 +9,4 @@ test/unit/results
 .DS_Store
 styleguide/build
 styleguide/index.html
+.tmp

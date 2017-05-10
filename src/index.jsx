@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import AppRouter from 'src/routes';
 import store from 'src/store';
 
-import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 import 'styles/base.global.scss';
 
 ReactDOM.render(

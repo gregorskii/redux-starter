@@ -1,6 +1,6 @@
 import React from 'react';
 
-const App = ({ children }) => (<div className="container">{children}</div>);
+const App = ({ children }) => (<div className="container-fluid">{children}</div>);
 
 App.propTypes = {
   children: React.PropTypes.node

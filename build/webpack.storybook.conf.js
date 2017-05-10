@@ -8,6 +8,7 @@ const noModuleQuery = querystring.stringify({
 
 const moduleQuery = querystring.stringify({
   modules: true,
+  importLoaders: 1,
   localIdentName: '[local]--[hash:base64:5]'
 });
 
@@ -21,7 +22,8 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /(\.global|_bootstrap)\.scss$/,
+        test: /\.scss$/,
+        include: [/\.global/, /bootstrap/],
         loader: [
           'style-loader',
           `css-loader?${noModuleQuery}`,
@@ -30,7 +32,8 @@ module.exports = {
         ].join('!')
       },
       {
-        test: /^((?!(\.global|_bootstrap)).)*\.scss$/,
+        test: /\.scss$/,
+        exclude: [/\.global/, /bootstrap/, /node_modules/],
         loader: [
           'style-loader',
           `css-loader?${moduleQuery}`,

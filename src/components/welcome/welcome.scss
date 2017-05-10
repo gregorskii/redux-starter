@@ -1,3 +1,6 @@
+@import "~styles/_starter/_vars.global.scss";
+
 .welcome {
   margin-top: 50px;
+  border: 1px solid $blue;
 }
