@@ -6,12 +6,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
+const stylelintConfig = path.join(process.cwd(), '.stylelintrc.yml');
+
 const config = require('../config');
 const paths = require('./paths');
 const baseWebpackConfig = require('./webpack.base.conf');
 
-const stylelintConfig = path.join(process.cwd(), '.stylelintrc.yml');
-const conf = config.dev;
+const conf = config.development;
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach((name) => {
@@ -20,11 +21,10 @@ Object.keys(baseWebpackConfig.entry).forEach((name) => {
 });
 
 module.exports = merge(baseWebpackConfig, {
-  devtool: 'eval-source-map',
   output: {
     path: conf.outputPath,
-    publicPath: config.dev.assetsPublicPath,
-    filename: `${conf.scriptsOutputPath}/[name].js`
+    publicPath: config.assetsPublicPath,
+    filename: `${conf.scriptOutputPath}/[name].js`
   },
   devServer: {
     historyApiFallback: true,
@@ -45,14 +45,14 @@ module.exports = merge(baseWebpackConfig, {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': conf.env
+    }),
     new webpack.LoaderOptionsPlugin({
       debug: true,
       context: __dirname
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': conf.env
-    }),
     new StyleLintPlugin({
       configFile: stylelintConfig
     }),

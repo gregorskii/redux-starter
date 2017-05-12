@@ -7,12 +7,12 @@ import styles from './welcome.scss';
 
 const Welcome = (props) => {
   return (
-    <Jumbotron bsClass="jumbotron" className={styles.welcome}>
+    <Jumbotron className={styles.welcome}>
       <h1>Redux Starter</h1>
       <p>{props.welcomeText}</p>
       <p>
         <LinkContainer to="/test">
-          <Button bsStyle="primary">Test</Button>
+          <Button color="primary">Test</Button>
         </LinkContainer>
       </p>
     </Jumbotron>

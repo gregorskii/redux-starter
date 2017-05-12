@@ -5,13 +5,13 @@ const proxyMiddleware = require('http-proxy-middleware');
 const history = require('connect-history-api-fallback');
 
 const config = require('../config');
-const webpackConfig = require('./webpack.dev.conf');
+const webpackConfig = require('./webpack.development.conf');
 
-const conf = config.dev;
+const conf = config.development;
 
 // Define HTTP proxies to your custom API backend
 // https://github.com/chimurai/http-proxy-middleware
-const proxyTable = config.dev.proxyTable;
+const proxyTable = conf.proxyTable;
 const app = express();
 const compiler = webpack(webpackConfig);
 
@@ -54,7 +54,7 @@ app.use(devMiddleware);
 app.use(hotMiddleware);
 
 // serve pure static assets
-const staticPath = config.dev.assetsPublicPath;
+const staticPath = conf.assetsPublicPath;
 app.use(staticPath, express.static(conf.staticDirectory));
 
 const uri = `http://localhost:${conf.port}`;

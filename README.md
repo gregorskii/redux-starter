@@ -7,8 +7,8 @@ Includes Bootstrap v4 Alpha, but can be removed from the `src/index.html`.
 ## Notes
 
 Storybook is broken under webpack 2 per [#637](https://github.com/storybooks/react-storybook/pull/637)
-Waiting on wallaby-webpack to have v2 support to fix unit tests -> https://github.com/jeffling/wallaby-webpack/issues/24
-Waiting on mocha-webpack to support compilers -> https://github.com/zinserjan/mocha-webpack/issues/132
+
+Ignores CSS styles in tests due to complex requirements to load module and non module CSS.
 
 ## Prerequisites
 

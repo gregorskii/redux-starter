@@ -49,17 +49,12 @@ module.exports = {
         use: 'json-loader'
       },
       {
-        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: '10000'
-          }
-        }]
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: 'file-loader'
       },
       {
-        test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
-        use: 'file-loader',
+        test: /\.(svg|png|gif|jp(e)?g)(\?[\s\S]+)?$/,
+        use: 'file-loader'
       }
     ]
   }

@@ -1,11 +1,13 @@
 const path = require('path');
 const paths = require('../build/paths');
-const devEnv = require('./dev.env');
-const prodEnv = require('./prod.env');
+const devEnv = require('./development.env');
+const prodEnv = require('./production.env');
 
 const baseConf = {
-  scriptsOutputPath: 'scripts',
-  cssOutputPath: 'styles'
+  scriptOutputPath: 'scripts',
+  styleOutputPath: 'styles',
+  imageOutputPath: 'images',
+  fontOutputPath: 'fonts'
 };
 
 // The path that the browser will load chunks from
@@ -14,7 +16,7 @@ const publicPath = '/';
 module.exports = {
   favicon: path.join(paths.src, 'static', 'favicon.png'),
 
-  dev: Object.assign({}, baseConf, {
+  development: Object.assign({}, baseConf, {
     // Which env.js file to use
     env: devEnv,
     // Where to put bundle assets
@@ -31,20 +33,19 @@ module.exports = {
     assetsPublicPath: publicPath,
     // Proxy table for dev server loop-backs
     proxyTable: {},
-    // Whether to use CSS sourcemaps
-    cssSourceMap: false
+    // Whether to enable sourcemaps
+    sourceMap: true
   }),
 
-  prod: Object.assign({}, baseConf, {
+  production: Object.assign({}, baseConf, {
     env: prodEnv,
     outputPath: paths.dist,
     indexTemplatePath: path.join(paths.src, 'index.html'),
     indexOutputPath: path.join(paths.dist, 'index.html'),
-    assetsPublicPath: '',
-    // Whether to enable source maps in production
-    productionSourceMap: false,
+    assetsPublicPath: publicPath,
+    sourceMap: false,
     // Whether to gzip assets
-    gzip: false,
+    gzip: true,
     // Extensions to gzip
     gzipExtensions: ['js', 'css']
   })

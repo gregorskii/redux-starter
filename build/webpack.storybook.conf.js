@@ -42,11 +42,11 @@ module.exports = {
         ].join('!')
       },
       {
-        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=10000'
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader'
       },
       {
-        test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+        test: /\.(svg|png|gif|jp(e)?g)(\?[\s\S]+)?$/,
         loader: 'file-loader'
       }
     ]

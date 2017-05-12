@@ -1,8 +1,3 @@
-const wallabyWebpack = require('wallaby-webpack');
-const webpackConfig = require('./build/webpack.test.conf');
-
-const webpackPostprocessor = wallabyWebpack(webpackConfig);
-
 process.env.NODE_ENV = 'test';
 
 module.exports = (wallaby) => {
@@ -10,19 +5,23 @@ module.exports = (wallaby) => {
     debug: true,
     testFramework: 'mocha',
     files: [
-      { pattern: 'src/**/*.js?(x)', load: false },
-      { pattern: 'test/unit/spec/helpers/**/*.js?(x)', load: false },
-      { pattern: '!src/**/*-spec.js?(x)', ignore: true },
-      { pattern: '!src/**/*-storybook.js?(x)', load: false }
+      'src/**/*.js?(x)',
+      'src/**/*.scss',
+      'test/unit/spec/helpers/**/*.js?(x)',
+      '!src/**/*-spec.js?(x)',
+      '!src/**/*-storybook.js?(x)'
     ],
     tests: [
-      { pattern: 'src/**/*-spec.js?(x)', load: false }
+      'src/**/*-spec.js?(x)'
     ],
+    env: {
+      type: 'node'
+    },
     compilers: {
       '**/*.js?(x)': wallaby.compilers.babel()
     },
-    postprocessor: webpackPostprocessor,
     setup: () => {
+      require.extensions['.scss'] = () => {};
       // eslint-disable-next-line global-require
       require('./test/unit/spec/helpers');
     }

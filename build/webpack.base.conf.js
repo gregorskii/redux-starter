@@ -3,18 +3,19 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = require('../config');
 const aliases = require('./aliases');
-const utils = require('./utils');
 
-const conf = process.env.NODE_ENV === 'prod' ? config.prod : config.dev;
+let conf;
+
+if (Object.hasOwnProperty.call(config, process.env.NODE_ENV)) {
+  conf = config[process.env.NODE_ENV];
+}
+
+const sourceMap = conf && !!conf.sourceMap;
 
 module.exports = {
+  devtool: sourceMap ? 'source-map' : false,
   entry: {
     app: 'src/index.jsx'
-  },
-  output: {
-    path: conf.outputPath,
-    publicPath: conf.assetsPublicPath,
-    filename: utils.assetsPath('scripts/[name].[chunkhash].js')
   },
   resolve: {
     extensions: ['.js', '.jsx', '.css', '.scss'],
@@ -35,10 +36,24 @@ module.exports = {
           use: [
             {
               loader: 'css-loader',
-              options: { modules: false }
+              options: {
+                modules: false,
+                minimize: true,
+                sourceMap
+              }
             },
-            { loader: 'postcss-loader' },
-            { loader: 'sass-loader' }
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap
+              }
+            }
           ]
         })
       },
@@ -52,12 +67,24 @@ module.exports = {
               loader: 'css-loader',
               options: {
                 modules: true,
+                minimize: true,
                 importLoaders: 1,
-                localIdentName: '[local]--[hash:base64:5]'
+                localIdentName: '[local]--[hash:base64:5]',
+                sourceMap
               }
             },
-            { loader: 'postcss-loader' },
-            { loader: 'sass-loader' }
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap
+              }
+            }
           ]
         })
       },
@@ -66,19 +93,26 @@ module.exports = {
         use: 'json-loader'
       },
       {
-        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'file-loader',
             options: {
-              limit: '10000'
+              name: `${conf.fontOutputPath}/[name].[hash].[ext]`
             }
           }
         ]
       },
       {
-        test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
-        use: 'file-loader'
+        test: /\.(svg|png|gif|jp(e)?g)(\?[\s\S]+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: `${conf.imageOutputPath}/[name].[hash].[ext]`
+            }
+          }
+        ]
       }
     ]
   },
@@ -86,7 +120,7 @@ module.exports = {
     new ProgressBarPlugin(),
     // extract css into its own files
     new ExtractTextPlugin({
-      filename: utils.assetsPath('styles/[name].[contenthash].css'),
+      filename: `${conf.styleOutputPath}/[name].[contenthash].css`,
       allChunks: true
     })
   ]

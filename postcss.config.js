@@ -13,7 +13,6 @@ const cssNextOpts = {
 };
 
 module.exports = {
-  map: process.env.NODE_ENV === 'dev' ? 'inline' : false,
   plugins: [
     cssnext(cssNextOpts)
   ]

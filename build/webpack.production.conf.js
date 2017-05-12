@@ -12,12 +12,19 @@ const paths = require('./paths');
 const config = require('../config');
 const utils = require('./utils');
 
-const conf = config.prod;
+const conf = config.production;
 const env = conf.env;
 
 const webpackConfig = merge(baseWebpackConfig, {
-  devtool: conf.productionSourceMap ? '#source-map' : false,
+  output: {
+    path: conf.outputPath,
+    publicPath: conf.assetsPublicPath,
+    filename: `${conf.scriptOutputPath}/[name].[chunkhash].js`
+  },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': env
+    }),
     new CleanWebpackPlugin(
       [paths.dist],
       {
@@ -33,13 +40,11 @@ const webpackConfig = merge(baseWebpackConfig, {
       context: __dirname
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': env
-    }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
-      }
+      },
+      minimize: true
     }),
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
@@ -73,6 +78,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunksSortMode: 'dependency'
     }),
     new FaviconsWebpackPlugin({
+      prefix: 'icons-[hash]/',
       logo: config.favicon,
       icons: {
         android: false,
@@ -88,12 +94,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       }
     }),
     new CopyWebpackPlugin([
-      { from: 'src/static' }
-    ], {
-      ignore: [
-        config.favicon.split('/')[(config.favicon.split('/')).length - 1]
-      ]
-    })
+      { from: 'src/static/robots.txt' }
+    ])
   ]
 });
 
