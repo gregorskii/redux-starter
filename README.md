@@ -64,8 +64,16 @@ load-nvmrc() {
 Install Project Packages:
 
 ```
-npm i
+yarn install
 ```
+
+OR NPM:
+
+```
+npm install
+```
+
+Yarn is preferred.
 
 ## Code style
 
