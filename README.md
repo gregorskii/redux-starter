@@ -61,12 +61,6 @@ load-nvmrc() {
 
 ## Install Node Packages
 
-Install Global Packages:
-
-```
-npm i -g karma-cli
-```
-
 Install Project Packages:
 
 ```
@@ -83,7 +77,7 @@ The project uses several types of Unit Tests depending on the scope of testing b
 
 For development of client side components the project uses [Wallaby.js](https://wallabyjs.com/) for interactive unit tests.
 
-For CI tests the project uses [Karma](https://karma-runner.github.io/1.0/index.html).
+For CI tests the project uses [mocha](https://mochajs.org/) directly. Tests run in the NODE context, not web.
 
 ## Getting Started
 
