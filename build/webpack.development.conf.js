@@ -23,7 +23,7 @@ Object.keys(baseWebpackConfig.entry).forEach((name) => {
 module.exports = merge(baseWebpackConfig, {
   output: {
     path: conf.outputPath,
-    publicPath: config.assetsPublicPath,
+    publicPath: conf.assetsPublicPath,
     filename: `${conf.scriptOutputPath}/[name].js`
   },
   devServer: {
